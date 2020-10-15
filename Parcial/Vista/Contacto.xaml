@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Parcial.Vista.Contacto" Title="Maestro">
+    
+    <!--MENU LATERAL-->
+    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+        <Button x:Name="BtnRegistro" Text="Crear contacto" Padding="0" Clicked="BtnRegistro_Clicked_1"/>
+    </StackLayout>
+</ContentPage>

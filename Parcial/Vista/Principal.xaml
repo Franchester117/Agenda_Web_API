@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Parcial.Vista.Detalle">
+    <!--VISTA PRINCIPAL-->
+    <Grid>
+        <Grid Grid.Row="0" Margin="0,0,0,100">
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="20,0" VerticalOptions="CenterAndExpand">
+                <Label Text="Tus contactos" FontSize="Large" TextColor="#000000"/>
+            </StackLayout>
+        </Grid>
+        <Grid Grid.Row="1" Margin="0,-100,0,0" >
+            <StackLayout Orientation="Vertical" Margin="20,0" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+
+                <!--BARRA DE BUSQUEDA-->
+                <Frame CornerRadius="10" Margin="5">
+                    <StackLayout VerticalOptions="Center">
+                        <SearchBar x:Name="BuscarTxt"
+                                Placeholder="Escriba para buscar"
+                                CancelButtonColor="Red"
+                                VerticalOptions="CenterAndExpand"
+                                TextChanged="BuscarTxt_TextChanged">
+                        </SearchBar>
+                    </StackLayout>
+                </Frame>
+                
+                <!--LISTA DE CONTACTOS-->
+                <Frame CornerRadius="10" Margin="5">
+                    <StackLayout VerticalOptions="Center">
+                        <ScrollView>
+                            <ListView  x:Name="ContactosList"  ItemSelected="ContactosList_ItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextCell Text="{Binding firstname}"  Detail="{Binding phoneNumber}"/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </ScrollView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>
